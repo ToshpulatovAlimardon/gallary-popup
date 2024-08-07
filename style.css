@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Rock+3D&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000032;
+}
+
+h1 {
+  font-size: 64px;
+  font-family: "Rock 3D", system-ui;
+  background-image: linear-gradient(to right, blue, orange, violet, deeppink);
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.images-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 30px;
+}
+
+.images-content .image {
+  height: 300px;
+  overflow: hidden;
+  border: 5px solid #888;
+  box-shadow: 0 0 10px #6464ff;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.images-content .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.images-content .image img:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 650px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  .images-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px;
+  }
+
+  .images-content .image {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  .images-content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .images-content .image {
+    height: 250px;
+  }
+}
+
+/* popup image */
+.popup-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 20, 0.9);
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: none;
+}
+
+.popup-image span {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 60px;
+  color: #fff;
+  font-weight: bolder;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.popup-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #777;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #6464ff;
+  width: 60%;
+  height: 90vh;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 650px) {
+  .popup-image span {
+    top: 10px;
+    right: 20px;
+    font-size: 40px;
+  }
+
+  .popup-image img {
+    width: 80%;
+    height: 70vh;
+  }
+}
